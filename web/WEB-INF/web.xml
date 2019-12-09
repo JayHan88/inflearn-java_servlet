@@ -78,8 +78,23 @@
         <servlet-name>ContextInitParam</servlet-name>
         <servlet-class>tutorials.ContextInitParam</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>JoinOk</servlet-name>
+        <servlet-class>tutorials.JoinOk</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Test</servlet-name>
+        <servlet-class>tutorials.Test</servlet-class>
+    </servlet>
 
-
+    <servlet-mapping>
+        <servlet-name>Test</servlet-name>
+        <url-pattern>/Test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JoinOk</servlet-name>
+        <url-pattern>/JO</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ContextInitParam</servlet-name>
         <url-pattern>/CInitParam</url-pattern>
@@ -132,4 +147,5 @@
     <listener>
         <listener-class> tutorials.Listener </listener-class>
     </listener>
+
 </web-app>
