@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jay
-  Date: 2019. 12. 7.
-  Time: 오후 11:11
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title> Join Success! </title>
 </head>
 <body>
-
+    회원가입이 정상 처리 되었습니다. </br>
+    <a href="login.html"> 로그인 </a>
 </body>
 </html>

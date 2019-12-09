@@ -45,11 +45,11 @@ public class JoinOk extends HttpServlet {
             int i = stmt.executeUpdate(query);
             if (i == 1){
                 System.out.println("insert success!");
-                response.sendRedirect("JointResult.jsp");
+                response.sendRedirect("/Test/JointResult.jsp");
             }
             else {
                 System.out.println("insert fail!");
-                response.sendRedirect("join.html");
+                response.sendRedirect("/Test/join.html");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
