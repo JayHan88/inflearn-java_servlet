@@ -1,4 +1,4 @@
-
+// Join.jsp에서 입력한 member info 값들을 검증하는 함수
 function infoConfirm() {
     if(document.reg_form.id.value == "") {
         alert("아이디를 입력해주세요.");
@@ -18,15 +18,15 @@ function infoConfirm() {
         return;
     }
 
-    if(document.reg_form.email.value.length == 0) {
-        alert("이메일은 필수 입력 사항입니다.");
-        document.reg_form.email.focus();
-        return;
-    }
-
     if(document.reg_form.name.value.length == "") {
         alert("이름은 필수 입력 사항입니다.");
         document.reg_form.name.focus();
+        return;
+    }
+
+    if(document.reg_form.email.value.length == 0) {
+        alert("이메일은 필수 입력 사항입니다.");
+        document.reg_form.email.focus();
         return;
     }
 

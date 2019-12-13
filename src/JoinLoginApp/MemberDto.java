@@ -2,9 +2,10 @@ package JoinLoginApp;
 
 import java.sql.Timestamp;
 
+// Java Bean
 public class MemberDto {
-
-    // Declaration of data object fields
+    // Declaration of properties
+    // property에 직접 접근할 수 없도록 private 사
     private String id;
     private String pw;
     private String name;
