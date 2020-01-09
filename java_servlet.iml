@@ -27,5 +27,7 @@
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="ojdbc6" level="project" />
     <orderEntry type="library" name="tomcat-dbcp" level="project" />
+    <orderEntry type="library" name="doc" level="project" />
+    <orderEntry type="library" name="cos" level="project" />
   </component>
 </module>

@@ -11,6 +11,7 @@
           <element id="library" level="project" name="JAX-WS-Apache Axis" />
           <element id="library" level="project" name="ojdbc6" />
           <element id="library" level="project" name="tomcat-dbcp" />
+          <element id="library" level="project" name="cos" />
         </element>
       </element>
     </root>
