@@ -12,6 +12,7 @@
           <element id="library" level="project" name="ojdbc6" />
           <element id="library" level="project" name="tomcat-dbcp" />
           <element id="library" level="project" name="cos" />
+          <element id="library" level="project" name="JSTL" />
         </element>
       </element>
     </root>

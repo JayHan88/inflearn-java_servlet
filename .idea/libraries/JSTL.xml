@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="JSTL">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../apache-tomcat-7.0.96 2/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../apache-tomcat-7.0.96 2/lib/standard.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
