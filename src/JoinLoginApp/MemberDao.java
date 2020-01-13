@@ -1,5 +1,6 @@
 package JoinLoginApp;
 
+import javax.management.remote.rmi._RMIConnection_Stub;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -8,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MemberDao {
     // for Connection
@@ -219,5 +221,36 @@ public class MemberDao {
         return logic;
     }
 
+    public ArrayList<MemberDto> memberAll() {
+        ArrayList<MemberDto> dtos = new ArrayList();
+        String query = "select * from MEMBERAPP";
 
+        try {
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
+
+            System.out.println("==================");
+            while (resultSet.next()) {
+                MemberDto dto = new MemberDto();
+                dto.setId(resultSet.getString("id"));
+                dto.setPw(resultSet.getString("pw"));
+                dto.setName(resultSet.getString("name"));
+                dto.setEmail(resultSet.getString("email"));
+                dto.setRdate(resultSet.getTimestamp("rDate"));
+                dto.setAddress(resultSet.getString("address"));
+                dtos.add(dto);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) connection.close();
+                if (preparedStatement != null) preparedStatement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return dtos;
+    }
 }
