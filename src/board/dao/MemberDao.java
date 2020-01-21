@@ -1,4 +1,6 @@
-package JoinLoginApp;
+package board.dao;
+
+import board.dto.MemberDto;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
