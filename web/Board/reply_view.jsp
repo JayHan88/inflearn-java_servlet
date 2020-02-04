@@ -11,6 +11,7 @@
             <input type="hidden" name="bGroup" value="${reply_view.bGroup}">
             <input type="hidden" name="bStep" value="${reply_view.bStep}">
             <input type="hidden" name="bIndent" value="${reply_view.bIndent}">
+            <input type="hidden" name="userId" value="${reply_view.userId}">
             <tr>
                 <td align="center" width="100"> 번호 </td>
                 <td> ${reply_view.bId}</td>

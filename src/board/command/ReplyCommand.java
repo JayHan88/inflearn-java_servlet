@@ -17,15 +17,16 @@ public class ReplyCommand implements Command {
         String bGroup = request.getParameter("bGroup");
         String bStep = request.getParameter("bStep");
         String bIndent = request.getParameter("bIndent");
+        String userId = request.getParameter("userId");
 
         System.out.println(bId);
         System.out.println(bName);
         System.out.println(bTitle);
         System.out.println(bContent);
         System.out.println(bGroup);
-
+        System.out.println(userId);
 
         Dao dao = new Dao();
-        dao.reply(bId, bName, bTitle, bContent, bGroup, bStep, bIndent);
+        dao.reply(bId, bName, bTitle, bContent, bGroup, bStep, bIndent, userId);
     }
 }

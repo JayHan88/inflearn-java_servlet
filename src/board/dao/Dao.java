@@ -214,13 +214,10 @@ public class Dao {
         return dto;
     }
 
-    public void reply(String bId, String bName, String bTitle, String bContent, String bGroup, String bStep, String bIndent) {
-        System.out.println(bId + bGroup + bStep + bIndent);
+    public void reply(String bId, String bName, String bTitle, String bContent, String bGroup, String bStep, String bIndent, String userId) {
         replyShape(bGroup, bStep);
-        System.out.println("hello");
-        System.out.println(bId + bGroup + bStep + bIndent);
         int logic = 0;
-        String query = "insert into mvc_board (bId, bName, bTitle, bContent, bGroup, bStep, bIndent) values (MVC_BOARD_SEQ.nextval, ?, ?, ?, ?, ?, ?)";
+        String query = "insert into mvc_board (bId, bName, bTitle, bContent, bGroup, bStep, bIndent, userId) values (MVC_BOARD_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             connection = dataSource.getConnection();
@@ -231,6 +228,7 @@ public class Dao {
                 preparedStatement.setInt(4, Integer.parseInt(bGroup));
                 preparedStatement.setInt(5, Integer.parseInt(bStep) + 1 );
                 preparedStatement.setInt(6, Integer.parseInt(bIndent) + 1 );
+                preparedStatement.setString(7, userId);
             logic = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

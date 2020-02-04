@@ -12,9 +12,10 @@ public class ReplyViewCommand implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response){
         System.out.println("ReplyView Command");
         String bId = request.getParameter("bId");
+        String userId = request.getParameter("userId");
+
         Dao dao = new Dao();
         Dto dto = dao.reply_view(bId);
-
         request.setAttribute("reply_view", dto);
     }
 }

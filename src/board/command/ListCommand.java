@@ -11,8 +11,10 @@ public class ListCommand implements Command{
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
-        String userId = request.getAttribute("userId").toString();
+        String userId = request.getParameter("userId");
+        String bName = request.getParameter("bName");
         request.setAttribute("userId", userId);
+        request.setAttribute("bName", bName);
 
         Dao dao = new Dao(); // Dao 객체 생성
         ArrayList<Dto> dtos = dao.list(); // Dao 객체에서 list 메소드 호출, dtos를 받아 옴

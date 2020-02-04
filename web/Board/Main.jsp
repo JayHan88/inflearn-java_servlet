@@ -7,20 +7,16 @@
     }
     String id = session.getAttribute("id").toString();
     String name = session.getAttribute("name").toString();
-    String email = session.getAttribute("email").toString();
-    String address = session.getAttribute("address").toString();
 %>
 
 <html>
 <head>
-    <title> Main Page </title>
+    <meta charset="UTF-8">
+    <title> 한글 </title>
 </head>
 <body>
-    <form action = "/Board/Logout.jsp" method="get">
-        <h1> <%=name%>님, 안녕하세요! </h1>
-        <h1> <%=id%>님, 안녕하세요! </h1>
-        <h1> <%=email%>님, 안녕하세요! </h1>
-        <h1> <%=address%>님, 안녕하세요! </h1>
+    <form action = "/Board/Logout.jsp" method="post">
+        <h1> <%= name %>님, 안녕하세요! </h1>
         <input type="submit" value="로그아웃"> &nbsp;&nbsp;
         <input type="button" value="회원정보 수정" onclick="window.location='/Board/Modify.jsp'">  &nbsp;&nbsp;
     </form>

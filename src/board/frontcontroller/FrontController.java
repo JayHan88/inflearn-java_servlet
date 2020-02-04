@@ -14,28 +14,42 @@ import java.io.IOException;
 public class FrontController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("doPost");
+        request.setCharacterEncoding("UTF-8");
         String userId = request.getParameter("userId");
+        String bName = request.getParameter("bName");
         System.out.println(userId);
-        actionDo(request, response, userId);
+        System.out.println(bName);
+        request.setAttribute("userId", userId);
+        request.setAttribute("bName", bName);
+        actionDo(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("doGet");
+        request.setCharacterEncoding("UTF-8");
         String userId = request.getParameter("userId");
-        actionDo(request, response, userId);
+        String bName = request.getParameter("bName");
+        System.out.println(userId);
+        System.out.println(bName);
+        request.setAttribute("userId", userId);
+        request.setAttribute("bName", bName);
+        actionDo(request, response);
     }
 
-    private void actionDo(HttpServletRequest request, HttpServletResponse response, String userId) throws ServletException, IOException {
+    private void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("actionDo");
-        System.out.println(userId);
         request.setCharacterEncoding("UTF-8");
+        String userId = request.getParameter("userId");
+        String bName = request.getParameter("bName");
+        System.out.println(userId);
+        System.out.println(bName);
         request.setAttribute("userId", userId);
+        request.setAttribute("bName", bName);
 
         String viewPage = null; // 요청을 받은 뒤에 어떤 view를 호출할 것인지 저장하는 변수
         Command command = null; // 어떤 command를 사용할 것인지 결정하는 객체
         String uri = request.getRequestURI();
         System.out.println("uri = " + uri);
-        System.out.println("userId = " + userId);
 
         if(uri.equals("/Board/write_view.bo")) {
             viewPage = "write_view.jsp";

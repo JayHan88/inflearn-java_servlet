@@ -1,7 +1,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String userId = request.getAttribute("userId").toString();
+    String userId = request.getParameter("userId");
+    String bName = request.getParameter("bName");
 %>
 <html>
 <head>
@@ -11,13 +12,14 @@
     <table width="500" cellpadding="0" cellspacing="0" border="3">
         <form action="write.bo" method="post">
             <input type="hidden" name="userId" value="<%= userId %>">
+            <input type="hidden" name="bName" value="<%= bName %>">
             <tr>
                 <td align="center"> 아이디 </td>
                 <td> <%= userId %> </td>
             </tr>
             <tr>
                 <td align="center"> 이름 </td>
-                <td> <input type="text" name="bName" value="${write_view.bName}"> </td>
+                <td> <%= bName %> </td>
             </tr>
             <tr>
                 <td align="center" width="100"> 제목 </td>
