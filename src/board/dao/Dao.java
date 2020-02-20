@@ -287,5 +287,12 @@ public class Dao {
             }
         }
     }
+
+    // Test code
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+         Dao dao = new Dao();
+         Dto dto = new Dto();
+
+    }
 }
 
